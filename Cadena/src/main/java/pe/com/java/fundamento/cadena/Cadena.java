@@ -1,32 +1,35 @@
 package pe.com.java.fundamento.cadena;
 
 import java.util.Date;
+import org.apache.log4j.Logger;
 
 public class Cadena {
 
+    public static final Logger LOGGER = Logger.getLogger(Cadena.class);
+    
     public static void main(String[] args) {
 
         //permitir ejecutar todas la lineas del bloque del metodo main
         String unico = "permitir ejecutar";
 
         //Manejo de String
-        System.out.println("\n--String--");
+        LOGGER.info("\n--String--");
         String frase = unico;
-        System.out.println(frase.toUpperCase());
+        LOGGER.info(frase.toUpperCase());
         frase = frase + " valor add";
-        System.out.println(frase);
+        LOGGER.info(frase);
 
         //Manejo de String Buffer
-        System.out.println("\n--StringBuffer--");
+        LOGGER.info("\n--StringBuffer--");
         StringBuffer sbf = new StringBuffer(unico);
         sbf.append(" valor add");
-        System.out.println(sbf.toString());
+        LOGGER.info(sbf.toString());
 
         //Manejo de String Builder
-        System.out.println("\n--StringBuilder--");//alt + 2  = \
+        LOGGER.info("\n--StringBuilder--");//alt + 2  = \
         StringBuilder sbu = new StringBuilder(unico);
         sbu.append(" valor add");
-        System.out.println(sbu.toString());
+        LOGGER.info(sbu.toString());
 
         Cadena obj = new Cadena();
         obj.comparacionTiposCadenas();
@@ -47,7 +50,7 @@ public class Cadena {
 
         fin = new Date();
         long diferencia = fin.getTime() - inicio.getTime();
-        System.out.println(diferencia + " milisegundos");
+        LOGGER.info(diferencia + " milisegundos");
         //////////////////////////////////////////////////////////
         inicio = new Date();
         for (int i = 0; i < 9999; i++) {
@@ -55,7 +58,7 @@ public class Cadena {
         }
         fin = new Date();
         diferencia = fin.getTime() - inicio.getTime();
-        System.out.println(diferencia + " milisegundos");
+        LOGGER.info(diferencia + " milisegundos");
         /////////////////////////////////////////////////////////
         inicio = new Date();
         for (int i = 0; i < 9999; i++) {
@@ -63,7 +66,7 @@ public class Cadena {
         }
         fin = new Date();
         diferencia = fin.getTime() - inicio.getTime();
-        System.out.println(diferencia + " milisegundos");
+        LOGGER.info(diferencia + " milisegundos");
 
     }
 
